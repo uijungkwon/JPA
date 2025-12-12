@@ -9,9 +9,9 @@ import java.util.List;
 
 @Entity
 @Getter @Setter
-public class Member {
+public class Member {//한사람은 여러개의 주문을 할 수 있다.
 
-    @Id @GeneratedValue
+    @Id @GeneratedValue //primarykey의미
     @Column(name = "member_id")
     private Long id;
 

@@ -5,6 +5,9 @@ import lombok.Getter;
 import lombok.Setter;
 import org.springframework.beans.factory.annotation.Qualifier;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE) //한 테이블에 모든 정보 저장
 @DiscriminatorColumn(name = "dtype")
@@ -18,5 +21,7 @@ public abstract class Item {
     private String name;
     private int price;
     private int stockQuantity;
+    @ManyToMany(mappedBy = "items")
+    private List<Category> categories = new ArrayList<>();//일부로 다대다 양방향관계로 생성
 
 }
