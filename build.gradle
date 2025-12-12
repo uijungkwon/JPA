@@ -25,6 +25,10 @@ repositories {
 }
 
 dependencies {
+	/*my-sql 의존성 추가*/
+	runtimeOnly 'com.mysql:mysql-connector-j'
+	runtimeOnly 'com.h2database:h2'
+
 	implementation 'org.springframework.boot:spring-boot-h2console'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
@@ -32,7 +36,8 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-devtools'
 	testImplementation 'junit:junit:4.13.1'//도움 기능 캐시 없앰,리로딩 가능
 	compileOnly 'org.projectlombok:lombok'
-	runtimeOnly 'com.h2database:h2'
+
+
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-data-jpa-test'
 	testImplementation 'org.springframework.boot:spring-boot-starter-thymeleaf-test'
